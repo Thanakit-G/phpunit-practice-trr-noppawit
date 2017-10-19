@@ -1,4 +1,4 @@
-<?php namespace Grading;
+<?php namespace Tax;
 
 class TaxCalculator {
 
@@ -14,7 +14,7 @@ class TaxCalculator {
             if ($revenue <= 150000) {
                 $tax = 0;
 
-            } elseif ($this->revenue <= 300000) {
+            } elseif ($revenue <= 300000) {
                 $tax = ($revenue - 150000) * 0.05;
 
             } elseif ($revenue <= 500000) {

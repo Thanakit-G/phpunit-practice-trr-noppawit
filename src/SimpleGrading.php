@@ -5,20 +5,23 @@ class SimpleGrading {
     public function evaluate($studentId, $score) {
 
         $gradeLetter = '';
-        
-        if ($score >= 81) {
+
+        if($score > 100) {
+            return "No grade letter";
+        } elseif ($score >= 81) {
             $gradeLetter = 'A';
-        } elseif ($Score > 71) {
+        } elseif ($score >= 71) {
             $gradeLetter = 'B';
         } elseif ($score >= 61) {
-            $gradeLetter = 'E';
+            $gradeLetter = 'C';
         } elseif ($score >= 51) {
             $gradeLetter = 'D';
-        } else {
+        } elseif ($score >= 0) {
             $gradeLetter = 'F';
+        } else {
+            return "No grade letter";
         }
-
-        return "1234567890 => '{$gradeLetter}'";
+        return "{$studentId} => '{$gradeLetter}'";
     }
     
 }

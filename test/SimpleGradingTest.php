@@ -64,4 +64,18 @@ class SimpleGradingTest extends TestCase {
         $this->assertEquals("1234567890 => 'F'", $grade);
     }
 
+    /**
+     * @group simple
+     **/
+    public function testStudentShouldHasNoGradeLetter() {
+        //Given
+        $simpleGrading = new SimpleGrading;
+
+        //When
+        $grade = $simpleGrading->evaluate('1234567890', -1);
+
+        // Then
+        $this->assertEquals("No grade letter",$grade);
+    }
+
 }
